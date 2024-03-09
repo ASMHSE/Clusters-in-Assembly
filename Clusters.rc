@@ -1,0 +1,70 @@
+; ==================================================================================================
+; Title:      Clusters.rc
+; Author:     Héctor S. Enrique
+; Version:    1.0.0
+; Purpose:    Clusters resource file.
+; Notes:      Version 1.0.0, October 2023
+;               - First release.
+; ==================================================================================================
+
+
+#include "Resource.h"               //Windows resource definitions
+#include "Clusters_Shared.rc"         //Application shared definitions
+#include "VER\Version.rc"           //Application version definition
+#include "MFT\Manifest_Invoker.rc"  //Application manifest definition
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+// Icons ------------------------------------------------------------------------------------------
+ICON_APP  ICON DISCARDABLE "ICO\OA.ico"
+
+
+// Bitmaps ----------------------------------------------------------------------------------------
+BMP_BACKGROUND  BITMAP "BMP\WndBkgnd.bmp"
+
+
+// Dialogs ----------------------------------------------------------------------------------------
+#include "DLG\DialogAbout.rc"
+
+
+// Menus ------------------------------------------------------------------------------------------
+MENU_APP MENUEX DISCARDABLE
+BEGIN
+  POPUP "&File", 0, MFT_STRING,   MFS_ENABLED
+  BEGIN
+    MENUITEM "&Load Data", IDM_SHOW,   MFT_STRING, MFS_ENABLED
+    MENUITEM "&Run", IDM_RUN,   MFT_STRING, MFS_ENABLED
+    MENUITEM "", , 0x0800 /*MFT_SEPARATOR*/
+    MENUITEM "&Exit", IDM_EXIT,   MFT_STRING, MFS_ENABLED
+  END
+  POPUP "&Strategy", 0, MFT_STRING,   MFS_ENABLED
+  BEGIN
+    MENUITEM "K-Means", IDM_STRAT1,   MFT_STRING, 0x00000008
+    MENUITEM "Hierarquical", IDM_STRAT2,   MFT_STRING, MFS_ENABLED
+    MENUITEM "DBSCAN", IDM_STRAT3,   MFT_STRING, MFS_ENABLED
+  END
+  POPUP "&Data", 0, MFT_STRING,   MFS_ENABLED
+  BEGIN
+    MENUITEM "Data1", IDM_DATA1,   MFT_STRING, 0x00000008
+    MENUITEM "Data2", IDM_DATA2,   MFT_STRING, MFS_ENABLED
+    MENUITEM "Data3", IDM_DATA3,   MFT_STRING, MFS_ENABLED
+  END
+  POPUP "&Clusters", 0, MFT_STRING,   MFS_ENABLED
+  BEGIN
+    MENUITEM "2 clusters", IDM_2CLUSTERS,   MFT_STRING, MFS_ENABLED
+    MENUITEM "3 clusters", IDM_3CLUSTERS,   MFT_STRING, 0x00000008
+  END
+  POPUP "&Help", 0, MFT_STRING,   MFS_ENABLED
+  BEGIN
+    MENUITEM "Application Help\tF1",  IDM_HELPA,  MFT_STRING, MFS_ENABLED
+    MENUITEM "Development Help\tAlt+F1",  IDM_HELPD,  MFT_STRING, MFS_ENABLED
+    MENUITEM "&About", IDM_ABOUT, MFT_STRING, MFS_ENABLED
+  END
+END
+
+// Accelerators ------------------------------------------------------------------------------------
+
+APPACCEL ACCELERATORS  DISCARDABLE
+BEGIN
+  VK_F1, IDM_HELPA, VIRTKEY,   NOINVERT
+  VK_F1, IDM_HELPD, ALT, VIRTKEY,   NOINVERT
+END
