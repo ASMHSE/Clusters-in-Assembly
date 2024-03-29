@@ -1,0 +1,45 @@
+\documentclass[12pt,a4paper]{scrartcl}
+\usepackage{rawfonts}
+\usepackage{amssymb}
+
+\usepackage{color}
+\definecolor{astral}{RGB}{46,116,181}
+\definecolor{myblue}{rgb}{0.25,0.25,0.5}
+
+\usepackage{sectsty}
+\sectionfont{\color{astral}}
+
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=red]{hyperref}
+
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.5ex}
+
+\begin{document}
+\title{\color{myblue}{Comparing K-Means and Other Algorithms for Data Clustering\break in Assembly. }}
+
+\author{Héctor S. Enrique}
+\date{ january 30, 2024}
+\maketitle
+
+\section{Purpose:}
+
+	See presentation and discussion in \href{https://masm32.com/board/index.php?topic=11649.0}{ Masm32 Forum} 
+
+\section{Running the Program: }
+
+    \begin{itemize}
+        \item Step 1: Select from Menu Data one data set. If you want to use default set or already loaded set, then skip this step. 
+        \item Step 2: Select from Menu File  $\displaystyle >$
+ Load Data. If you want to use already loaded set, then skip this step. 
+        \item Step 3:  Select from Menu Strategy the algorithm you want. If you want to use default stratey or already select algorithm, then skip this step. 
+        \item Step 4 : Only if you seleted K-Means or Hierarchical strategies. Select from  Menu Cluster the number of clusters. In this examples the author use 3-clusters for data1 and data2, and  2-clusters for data 3. 
+        \item Step 5 : Select from Menu File $\displaystyle >$ Run 
+        \item Step 6 : Go to Step1 to test more things. 
+     \end{itemize}
+
+\section{Additional Reading}
+
+	\href{https://www.codeproject.com/Articles/5375470/Comparing-K-Means-and-Others-Algorithms-for-Data-C}{Comparing K-Means and Others Algorithms for Data Clustering} by Nicolás Descartes 
+
+\thispagestyle{empty}
+
+\end{document}
