@@ -19,6 +19,4 @@ There is some kind of abuse of Collections, because is very easy to write that i
 
 Anyway is a good challenge, and still I have to collect some leaks
 
-Original discussion can be found in [Masm32 Forum](https://masm32.com/board/index.php?topic=11649.0)
-
 Any sugestion or improvement is welcome!
